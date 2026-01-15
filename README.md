@@ -1,6 +1,4 @@
 
-
-```markdown
 # SpeedRust 🦀🚀
 
 **Fast, lightweight internet speed test CLI in Rust**  
