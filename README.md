@@ -107,5 +107,4 @@ License: [MIT](LICENSE)
 ⭐ Star the repo if you like it!  
 Found it useful? Consider [sponsoring the project](https://github.com/sponsors/pratikdevelop) on GitHub (coming soon!).
 
-Happy speed testing! 🇮🇳
-```
+Happy speed testing!
