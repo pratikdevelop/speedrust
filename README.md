@@ -1,17 +1,4 @@
-Great job, Dass Ji! Your repository is now live at **https://github.com/pratikdevelop/speedrust** 🎉
 
-From what I can see:
-- The repo exists publicly
-- Description: "Fast, lightweight internet speed test CLI in Rust – optimized for Jio 5G & Indian users" (perfect!)
-- License: MIT (already present)
-- No README.md file yet (it shows "File not found" when accessing /blob/main/README.md)
-- Currently 0 stars/forks, 1 commit (fresh repo)
-
-Since there's **no README yet**, let's create a strong, professional one right now. This will make your project look complete, attract contributors, and help people understand how to use it.
-
-### Updated README.md Content (Copy-Paste Ready)
-
-Create a new file called `README.md` in your project root (E:\speedtest-cli) using any text editor (VS Code, Notepad++, etc.), paste the content below, save it, then commit & push:
 
 ```markdown
 # SpeedRust 🦀🚀
@@ -21,40 +8,53 @@ Optimized for **Jio 5G / AirFiber** users in India.
 
 A beautiful, async terminal tool that measures real download/upload/ping with progress bars, colors, and retry logic for flaky 5G connections.
 
+[![GitHub Stars](https://img.shields.io/github/stars/pratikdevelop/speedrust?style=social)](https://github.com/pratikdevelop/speedrust)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ![SpeedRust Example Output](https://i.imgur.com/YOUR_SCREENSHOT_LINK.png)  
-*(Replace with your actual screenshot – upload one from your successful run to imgur.com or GitHub issues)*
+*(Upload a screenshot of the tool running to imgur.com, copy the direct image link, and replace the placeholder above)*
+
+### How to Add a Screenshot Quickly (Recommended!)
+1. Run the tool once (`cargo run -- --iterations 3`) and take a screenshot of the colorful output.
+2. Go to https://imgur.com → Click "New post" → Drag & drop or upload the screenshot.
+3. Right-click the image → "Copy image address" (ends with .png or .jpg).
+4. Replace `YOUR_SCREENSHOT_LINK` in the README with that link.
+5. Commit & push — the image will appear perfectly in the README!
 
 ## Features
-- Real measurements (no dummies)
+- Real measurements (no dummies!)
 - Reliable public servers (Tele2 for download, file.io for upload)
-- Progress bars + colored output
-- Automatic retries on connection resets (common on 5G)
-- Custom server support
-- Tested & tuned for Jio 5G in Madhya Pradesh
+- Beautiful progress bars + colored terminal output
+- Automatic retries on connection resets (perfect for Jio 5G instability)
+- Custom server support (`--server URL`)
+- Tested & tuned for Indian connections (Madhya Pradesh focus)
 
 ## Installation
 
-### From source (recommended right now)
+### Easiest: Install from GitHub
 ```bash
 cargo install --git https://github.com/pratikdevelop/speedrust
 ```
 
-### Build from source
+### Build from Source
 ```bash
 git clone https://github.com/pratikdevelop/speedrust.git
 cd speedrust
 cargo build --release
-# Then run: ./target/release/speedrust (or speedrust.exe on Windows)
+# Run it:
+./target/release/speedrust --iterations 5
+# Or on Windows:
+target\release\speedrust.exe --iterations 5
 ```
 
 ## Usage
 ```bash
-speedrust                      # Run default 3 tests
+speedrust                      # Default: 3 iterations
 speedrust --iterations 5      # More accurate average
-speedrust --server http://speedtest.tele2.net/10MB.zip  # Quick small-file test
+speedrust --server http://speedtest.tele2.net/10MB.zip   # Quick small-file test
 ```
 
-Example output:
+Example output (your results will vary):
 ```
 Starting SpeedRust Test...
 Date: 2026-01-15 14:32:06 +05:30
@@ -64,35 +64,50 @@ Using download server: http://speedtest.tele2.net/100MB.zip
   Ping: 45 ms
   Downloading test file... [██████████] 100.00 MiB/100.00 MiB
   Download: 28.45 Mbps
-  ...
+  Uploading test data (10 MB)... (public temp endpoint)
+  Upload: 15.20 Mbps
+└──────────────────────┘
+
+         FINAL RESULTS          
+Average Ping:    42 ms
+Average Download: 27.80 Mbps
+Average Upload:  14.90 Mbps
+
+Great performance! Your Jio 5G is flying 🚀
 ```
 
 ## Why SpeedRust?
-- Many speed test tools use distant servers or fail on 5G instability
-- This one uses stable public files, retries errors, and is tuned for Indian connections (Jio especially)
-- Pure Rust → fast startup, single binary, no heavy dependencies
+Most CLI speed tools either use distant servers, crash on 5G instability, or show fake results.  
+This one is:
+- Pure Rust → instant startup, single binary
+- Tuned for India (reliable servers, retry logic)
+- Open-source & free (MIT license)
 
 ## Limitations & Roadmap
-- Upload uses temporary public endpoint (10MB limit for reliability)
-- Single-connection tests → may show lower than multi-thread tools like Speedtest.net
-- Future plans:
-  - Auto-select nearest server (Mumbai/India preferred)
-  - Multi-connection download for higher speeds
-  - Better upload testing
-  - JSON output
-  - Pre-built binaries (Windows/Linux)
+**Current limitations**:
+- Upload uses temporary public endpoint (limited to ~10MB for stability)
+- Single-connection tests → may show slightly lower than multi-thread tools like Speedtest.net
+
+**Coming soon**:
+- Auto-select nearest server (Mumbai/India)
+- Multi-connection download for max speed
+- Better upload testing (regional servers)
+- JSON output (`--json`)
+- Pre-built binaries (Windows/Linux)
 
 ## Contributing
-Pull requests welcome!  
-Especially help with:
-- Finding better regional upload servers
-- Adding multi-threaded downloads
-- Improving progress accuracy
+Pull requests welcome! Especially:
+- Better regional upload servers
+- Multi-threaded download improvements
+- Bug fixes for Jio 5G edge cases
 
-Open an issue or PR anytime.
+Just open an issue or PR — let's make it better together!
 
 Made with ❤️ in **Ujjain, Madhya Pradesh** by Dass Ji  
 License: [MIT](LICENSE)
 
-Star ⭐ the repo if you find it useful!
+⭐ Star the repo if you like it!  
+Found it useful? Consider [sponsoring the project](https://github.com/sponsors/pratikdevelop) on GitHub (coming soon!).
+
+Happy speed testing! 🇮🇳
 ```
